@@ -5,22 +5,128 @@
        <title>Tasty Burgers</title>
        <meta charset="utf-8"/>
    </head>
+
    <body>
+
     <header>
     <h1>Welcome to Tasty Burgers</h1>
     </header>
-    <nav> Menu items </nav>
+
+    <nav> At this restaurant we only serve fresh and TASTY burgers </nav>
+
     <main>
+
         <section>
-            <!--beställa burgare-->
+            <h2> Our current selection of burgers </h2>
+        <div style="display:inline-block">
+            <!--den naturella-->
+            <h3> Tastys Original Burger </h3>
+            <img src="https://i1.sndcdn.com/artworks-000528440004-k84lgg-t500x500.jpg" title="Original" style="width: 200px">
+            <ul>
+                <li>Lactose-free</li>
+                <li>Gluten-free</li>
+            </ul>
+        </div>
+
+        <div style="display:inline-block">
+            <!--den ostiga-->
+            <h3> Tastys Very Cheesy Cheeseburger </h3>
+            <img src="https://www.shutterstock.com/image-photo/delicious-cheeseburger-double-pickles-isolated-600nw-2494108493.jpg" title="Cheesy" style="width: 200px">
+            <ul>
+                <li>Contains Lactose</li>
+                <li>Contains Gluten</li>
+            </ul>
+        </div>
+
+        <div style="display:inline-block">
+            <!--salladsburgaren-->
+            <h3> Tastys Healthy Burger </h3>
+            <img src="https://www.max.se/contentassets/a8b6e8662e6d4a2ba06592874b6e5c13/product_salad-wrap-burgare.png" title="Healthy" style="width: 200px">
+            <ul>
+                <li>Gluten-free</li>
+                <li>Contains Lactose</li>
+                <li>This burger comes without bread</li>     
+            </ul>
+        </div>
+
+            </section>
+
+       <section>
+            <h4> Select burger </h4>
+            <p>
+   <label for="chosenburger">Choose burger</label><be>
+   <select id="chosenburger" name="chosenburger">
+        <option selected="selected">Select burger</option>
+       <option>Tastys Original Burger</option>
+       <option>Tastys Very Cheesy Cheeseburger</option>
+       <option>Tastys Healthy Burger</option>
+   </select>
+</p>
         </section>
-        <section>
-            <!--ange personlig info-->
-        </section>
+
+    <section id="orderinfo">
+    <h2> Order information </h2>
+    <legend><h4> Personal information</h4></legend>
+        
+    <fieldset>
+
+    
+    <form>
+        <p>
+    <label for="fullname">Full name</label><br>
+    <input type="text" id="fullname" name="fullname" required="required" placeholder="First and last name">
+    </p>
+<p>
+    <label for="house adess">Full address</label><br>
+    <input type="text" id="streetaddress" name="streetaddress" required="required" placeholder="Street">
+    <input type="number" id="housenumber" name="housenumber" required="required" placeholder="Number"><br>
+    <input type="text" id="postal" name="postal" required="required" placeholder="Postal code">
+</p>
+     
+    
+    <p>
+    <label for="gender">Gender:</label>
+
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label>
+
+    <input type="radio" id="other" name="gender" value="other" />
+    <label for="other">Other</label>
+</p>
+
+<p>
+   <label for="paymentmethod">Payment Method</label><be>
+   <select id="paymentmethod" name="paymentmethod">
+       <option selected="selected">Swish</option>
+       <option>Card Payment</option>
+       <option>Klarna</option>
+       <option>Cash to deliverer</option>
+   </select>
+</p>
+
+</form>
+</fieldset>
+</section>
+
+<section>
+    <p>
+    <button type="submit" name="Submit" >Submit order!</button>
+    </p>
+</button>
+
+</section>
+
+    
     </main>
+
+    <hr>
+
     <footer>
-        Nominated Best Burger of the Year 2025.
-        For complaints please emal complaints@tastyburgers.com
+        Nominated Best Burger of the Year 2025. <br/>
+        For complaints please email complaints@tastyburgers.com
     </footer>
 
    </body>
