@@ -5,28 +5,30 @@
    <head>
        <title>Tasty Burgers</title>
        <meta charset="utf-8"/>
-  <!-- <link rel="stylesheet" type="text/css" href="/Users/ronjalundberg/Burgerlab/1MD031-lab-2024/public/css/style.css"> -->
+ <link rel="stylesheet" type="text/css" href="/Users/ronjalundberg/Burgerlab/1MD031-lab-2024/public/css/style.css"> 
    </head>
 
    <body>
    <!-- <body style="background-color:rgb(248, 0, 157);"></body> -->
-    <header>
+    <header >
+
     <h1>Welcome to Tasty Burgers</h1>
     </header>
 
-    <nav> At this restaurant we only serve fresh and TASTY burgers </nav>
 
     <main>
 
-        <section>
+        <section id = "burgersection">
+
             <h2> Our current selection of burgers </h2>
-        <div style="display:inline-block">
+
+        <div style="display:inline-block" >
             <!--den naturella-->
             <h3> Tastys Original Burger </h3>
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA3CxLQevdy_JdEifmfx2gZ9DN8YKL04PW3g&s" title="Original" style="width: 200px">
             <ul>
-                <li>Lactose-free</li>
-                <li>Gluten-free</li>
+                <li><span class="allergen">Lactose-free</span></li>
+                <li><span class="allergen">Gluten-free</span></li>
             </ul>
         </div>
 
@@ -35,8 +37,9 @@
             <h3> Tastys Very Cheesy Cheeseburger </h3>
             <img src="https://sargento.com/assets/Uploads/Recipe/Image/BonanzaBurger__FocusFillWyIwLjAwIiwiMC4wMCIsODAwLDQ3OF0_CompressedW10.jpg" title="Cheesy" style="width: 200px">
             <ul>
-                <li>Contains Lactose</li>
-                <li>Contains Gluten</li>
+                <li>Contains <span class="allergen">Lactose</span></li>
+                <li>Contains <span class="allergen">Gluten</span></li>
+        
             </ul>
         </div>
 
@@ -45,8 +48,8 @@
             <h3> Tastys Healthy Burger </h3>
             <img src="https://img.taste.com.au/i4-4vuh9/taste/2022/12/no-bun-burgers-183842-2.jpg" title="Healthy" style="width: 200px">
             <ul>
-                <li>Lactose-free</li>
-                <li>Contains Gluten</li>
+                <li><span class="allergen">Lactose-free</span></li>
+                <li>Contains <span class="allergen">Gluten</span></li>
                 <li>Vegetarian Friendly</li>  
                 <li>This burger comes without bread</li>     
             </ul>
@@ -54,10 +57,10 @@
 
             </section>
 
-       <section>
+       <section id="chooseburger">
             <h4> Select burger </h4>
             <p>
-   <label for="chosenburger">Choose burger</label><be>
+   <label for="chosenburger">Choose burger</label><br>
    <select id="chosenburger" name="chosenburger">
         <option selected="selected">Select burger</option>
        <option>Tastys Original Burger</option>
@@ -71,7 +74,7 @@
     <h2> Order information </h2>
     <legend><h4> Personal information</h4></legend>
         
-    <fieldset>
+<!--<fieldset>-->
 
     
     <form>
@@ -101,7 +104,7 @@
 </p>
 
 <p>
-   <label for="paymentmethod">Payment Method</label><be>
+   <label for="paymentmethod">Payment Method</label><br>
    <select id="paymentmethod" name="paymentmethod">
        <option selected="selected">Swish</option>
        <option>Card Payment</option>
@@ -111,10 +114,10 @@
 </p>
 
 </form>
-</fieldset>
+<!--</fieldset>-->
 </section>
 
-<section>
+<section id="thesubmitbutton">
     <p>
     <button type="submit" name="Submit" >Submit order!</button>
     </p>

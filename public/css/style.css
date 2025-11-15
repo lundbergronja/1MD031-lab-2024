@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Cormorant:wght@700&display=swap');
+
+/* Här testar jag att kommentera */
+
 body {
-    font-size: 12pt;
+    font-size: 14pt;
+   font-family: "Courier New", sans-serif; /* Gillar också Open Sans, sans-serif */
+    /*background-color: floralwhite;*/
 }
 
 p {
@@ -16,7 +21,7 @@ main, header, footer, nav ul {
     margin: 0 auto 0 auto;
 }
 main {
-    background-color: bisque;
+   /* background-color: bisque;*/
 }
 
 /* nav ul li {
@@ -27,12 +32,16 @@ main {
 } */
 
 header {
-    background-image: url("../img/polacks.jpg");
+    background-image: url("https://i.pinimg.com/originals/58/76/de/5876de05f919a8a5b94b35c16d2d231a.gif");
     background-size: cover;
     overflow: hidden;
     width: 100%;
     height: 200px;
-    opacity: 0.5;
+    opacity: 0.85;
+    margin-top: 30px;
+    /*Detta nedanför hittade jag på StackOverflow för att få outlined text https://stackoverflow.com/questions/4919076/outline-effect-to-text*/
+  -webkit-text-fill-color: firebrick;
+  -webkit-text-stroke: 1px;
 }
 
 header h1 {
@@ -62,3 +71,48 @@ nav li {
     color: green;
     font-weight: bold;
 }
+
+.allergen {
+   font-weight: bold;
+}
+
+.classname {
+   color: #ff5500;
+}
+
+#burgersection {
+   color: white;
+   background-color: black;
+   border: 2px dotted white
+}
+
+#burgersection div {
+   padding: 10px;
+   margin: 20px;
+}
+
+#burgersection h2 {
+   padding-left: 20px;
+}
+
+#orderinfo {
+    color: black;
+   border: 2px dotted black;
+   padding-left: 20px;
+}
+
+
+
+button:hover {
+   background-color: floralwhite;
+   cursor: pointer;
+}
+
+button {
+   margin: 30px;
+}
+
+section{
+    margin: 20px 20px 20px 20px;
+}
+
