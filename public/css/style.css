@@ -5,7 +5,7 @@
 body {
     font-size: 10pt;
    font-family: "Courier New", sans-serif; /* Note: Gillar också Open Sans, sans-serif */
-    background-color: floralwhite;
+    background-color: floralwhite; /* Denna gör bakgrunden bakom hela altet typ lite offwhite vit*/
 }
 
 p {
