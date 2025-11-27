@@ -2,7 +2,7 @@
 <div>
     <div>
     <h1>Burgers</h1>
-    <Burger v-for="burger in burgers"
+    <Burger v-for="burger in BurgerArray"
             v-bind:burger="burger" 
             v-bind:key="burger.name"/>
     </div>
@@ -18,6 +18,37 @@ import io from 'socket.io-client'
 
 const socket = io("localhost:3000");
 
+//task 1 nedan, skapa en object constructor function "MenuItem" m namn,url,kcal,allergener
+
+function MenuItem(productName,imgUrl, kCal, hasLactose, hasGluten) {
+  this.name = productName;
+  this.url = imgUrl;
+  this.kCal = kCal;
+  this.lactose = hasLactose; 
+  this.gluten = hasGluten; 
+}
+
+const BurgerArray = [
+  new MenuItem("Tastys Original Burger", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA3CxLQevdy_JdEifmfx2gZ9DN8YKL04PW3g&s", 610 ,false,false),
+  new MenuItem("Tastys Very Cheesy Cheeseburger", "https://sargento.com/assets/Uploads/Recipe/Image/BonanzaBurger__FocusFillWyIwLjAwIiwiMC4wMCIsODAwLDQ3OF0_CompressedW10.jpg", 1080 ,true,true),
+  new MenuItem("Tastys Healthy Burger", "https://img.taste.com.au/i4-4vuh9/taste/2022/12/no-bun-burgers-183842-2.jpg", 460 ,false,true),
+]
+
+console.log(BurgerArray)
+
+
+//exempel från educora
+function Employee(fn, ln, branch, pos) {
+    this.firstName = fn; // The *this* keyword refers to the object itself
+    this.lastName = ln;
+    this.branch = branch;
+    this.position = pos;
+    this.name = function() {
+        return this.firstName + ' ' + this.lastName;
+    };
+}
+// slut exempel
+
 export default {
   name: 'HomeView',
   components: {
@@ -25,10 +56,7 @@ export default {
   },
   data: function () {
     return {
-      burgers: [ {name: "small burger", kCal: 250},
-                 {name: "standard burger", kCal: 450},
-                 {name: "large burger", kCal: 850}
-               ]
+      BurgerArray
     }
   },
   methods: {
@@ -47,6 +75,8 @@ export default {
     }
   }
 }
+
+
 </script>
 
 <style>
