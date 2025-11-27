@@ -37,3 +37,4 @@ The style.css file contains:
 - [X] Add a border to the two sections
 - [X] Create a header that places an image behind the headline
 - [X] Use a grid layout for the burger selection section
+
