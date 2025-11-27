@@ -220,4 +220,137 @@ export default {
     height: 300px;
     background-color: red;
   }
+/* nedan kommer från min css-fil */
+
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Cormorant:wght@700&display=swap');
+
+/* Här testar jag att kommentera */
+
+body {
+    font-size: 10pt;
+   font-family: "Courier New", sans-serif; /* Note: Gillar också Open Sans, sans-serif */
+    background-color: indianred; /*ändrar fäg på bakgrunden bakom hela altet, floralwhite typ lite offwhite vit, indianred lite rostfärg*/
+}
+
+p {
+    /*detta påverkar rubrikerna i selection*/
+    color: azure;
+}
+
+h1 {
+    font-family: 'Agbalumo';
+    font-size: 36pt;
+}
+
+main {
+   /* background-color: bisque;*/
+}
+
+
+header {
+    background-image: url("https://i.pinimg.com/originals/58/76/de/5876de05f919a8a5b94b35c16d2d231a.gif");
+    background-size: cover;
+    overflow: hidden;
+    width: 100%;
+    height: 275px;
+    opacity: 0.85;
+    margin-top: 30px;
+    /*Detta nedanför hittade jag på StackOverflow för att få outlined text https://stackoverflow.com/questions/4919076/outline-effect-to-text*/
+  -webkit-text-fill-color: crimson;
+  -webkit-text-stroke: 1px;
+  position: relative;
+}
+
+/*Jag tror att det jag lyckats använda flexbox-metoden för att styla headern*/
+
+
+header h1 {
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+.allergen {
+   font-weight: bold;
+}
+
+.classname {
+   color: #ff5500;
+}
+
+#burgersection {
+   color: white;
+   background-color: black;
+   border: 2px dotted darkred
+}
+
+#burgersection div {
+   padding: 10px;
+   margin: 20px;
+}
+
+#burgersection h2 {
+   padding-left: 20px;
+   color: crimson
+}
+
+#orderinfo {
+    color: black;
+   border: 2px dotted darkred;
+   padding-left: 20px;
+}
+
+
+
+button:hover {
+   background-color: floralwhite;
+   cursor: pointer;
+}
+
+button {
+   margin: 30px;
+}
+
+section{
+    margin: 20px 20px 20px 20px;
+}
+
+/*Nedan börjar labb-task kring grid*/
+
+.wrapper {
+     display: grid;
+     grid-gap: 5px;
+     grid-template-columns: 33% 33% 33%;
+     /*background-color: #fff; känns som denna bara gjorde det fulare*/
+     color: #eec2c2;
+ }
+
+ .wrapper img {
+    width: 100%;
+    height: auto;
+}
+
+ .box {
+     background-color: crimson;
+     color: black; /*textfärg, overridar wrapper ovan*/
+     border-radius: 30px;
+     padding: 20px;
+     font-size: 100%;
+ }
+
+
+ .a {
+     grid-column: 1 ;
+     grid-row: 1 ;
+ }
+ .b {
+     grid-column: 2 ;
+     grid-row: 1 ;
+ }
+ .c {
+     grid-column: 3 ;
+     grid-row: 1 ;
+ }
+
 </style>
