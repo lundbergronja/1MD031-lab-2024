@@ -130,11 +130,7 @@ function MenuItem(productName,imgUrl, kCal, hasLactose, hasGluten, protein) {
   this.protein = protein 
 }
 
-const BurgerArray = [
-  new MenuItem("Tastys Original Burger", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA3CxLQevdy_JdEifmfx2gZ9DN8YKL04PW3g&s", 610 ,false,false, "68% beef"),
-  new MenuItem("Tastys Very Cheesy Cheeseburger", "https://sargento.com/assets/Uploads/Recipe/Image/BonanzaBurger__FocusFillWyIwLjAwIiwiMC4wMCIsODAwLDQ3OF0_CompressedW10.jpg", 1080 ,true,true, "100% swedish grassfed beef"),
-  new MenuItem("Tastys Healthy Burger", "https://img.taste.com.au/i4-4vuh9/taste/2022/12/no-bun-burgers-183842-2.jpg", 460 ,false,true, "vegetarian"),
-]
+const BurgerArray = menu;
 
 
 
