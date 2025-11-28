@@ -1,21 +1,25 @@
-[{
-    "name": "Veggie Bliss", 
-    "kCal": 500, 
-    "url": "https://images-bonnier.imgix.net/files/ifo/production/20220412084608/Kødfri-burger-1.jpg?auto=compress,format&w=1024%201024w",
+[
+    {
+    "name": "Tastys Original Burger", 
+    "kCal": 610, 
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA3CxLQevdy_JdEifmfx2gZ9DN8YKL04PW3g&s",
     "lactose": false, 
     "gluten": false
-},
-{
-    "name": "Veggie Bliss", 
-    "kCal": 500, 
-    "url": "https://images-bonnier.imgix.net/files/ifo/production/20220412084608/Kødfri-burger-1.jpg?auto=compress,format&w=1024%201024w",
+    },
+    
+    {
+    "name": "astys Very Cheesy Cheeseburger", 
+    "kCal": 1080, 
+    "url": "ttps://sargento.com/assets/Uploads/Recipe/Image/BonanzaBurger__FocusFillWyIwLjAwIiwiMC4wMCIsODAwLDQ3OF0_CompressedW10.jpg",
+    "lactose": true, 
+    "gluten": true
+    },
+
+    {
+    "name": "Tastys Healthy Burger", 
+    "kCal": 460, 
+    "url": "https://img.taste.com.au/i4-4vuh9/taste/2022/12/no-bun-burgers-183842-2.jpg",
     "lactose": false, 
-    "gluten": false
-},
-{
-    "name": "Veggie Bliss", 
-    "kCal": 500, 
-    "url": "https://images-bonnier.imgix.net/files/ifo/production/20220412084608/Kødfri-burger-1.jpg?auto=compress,format&w=1024%201024w",
-    "lactose": false, 
-    "gluten": false
-}]
+    "gluten": true
+    }
+]

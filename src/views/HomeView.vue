@@ -233,7 +233,7 @@ body {
 }
 
 p {
-    /*detta påverkar rubrikerna i selection*/
+    /*detta påverkar rubrikerna i order info*/
     color: azure;
 }
 
@@ -243,7 +243,7 @@ h1 {
 }
 
 main {
-   /* background-color: bisque;*/
+  /*här var det ngn bakgrundsfäg som jag tog bort*/
 }
 
 
