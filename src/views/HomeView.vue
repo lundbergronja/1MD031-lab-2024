@@ -18,12 +18,13 @@
     <!-- nedan kommer från index-noscrpt.html-->
 
     <main>
-      <section id="chooseburger">
-        <h4>Select burger</h4>
+      <section id="SelectionSection">
+        <h3>Select burger</h3>
         <p>
           <label for="chosenburger">Choose burger</label><br />
-          <select id="chosenburger" name="chosenburger">
-            <option selected="selected">Select burger</option>
+          <select id="chosenburger" v-model="chosenburger">
+            <option value="" disabled hidden>Select burger</option>
+            <!-- Fick hjälp av ChatGPT att lära mig hur jag skulle skriva denna raden för att få Select Burger som placeholder som försvinner när man väl väljer burgare-->
             <option>Tastys Original Burger</option>
             <option>Tastys Very Cheesy Cheeseburger</option>
             <option>Tastys Healthy Burger</option>
@@ -41,7 +42,7 @@
             <input
               type="text"
               id="fullname"
-              name="fullname"
+              v-model="fullname"
               required="required"
               placeholder="First and last name"
             />
@@ -51,42 +52,40 @@
             <input
               type="text"
               id="streetaddress"
-              name="streetaddress"
+              v-model="streetaddress"
               required="required"
               placeholder="Street"
             />
             <input
               type="number"
               id="housenumber"
-              name="housenumber"
+              v-model="housenumber"
               required="required"
               placeholder="Number"
             /><br />
             <input
               type="text"
               id="postal"
-              name="postal"
+              v-model="postal"
               required="required"
               placeholder="Postal code"
             />
           </p>
-
           <p>
             <label for="gender">Gender:</label>
 
-            <input type="radio" id="male" name="gender" value="male" />
+            <input type="radio" id="male" v-model="gender" value="male" />
             <label for="male">Male</label>
 
-            <input type="radio" id="female" name="gender" value="female" />
+            <input type="radio" id="female" v-model="gender" value="female" />
             <label for="female">Female</label>
 
-            <input type="radio" id="other" name="gender" value="other" />
+            <input type="radio" id="other" v-model="gender" value="other" />
             <label for="other">Other</label>
           </p>
-
           <p>
             <label for="paymentmethod">Payment Method</label><br />
-            <select id="paymentmethod" name="paymentmethod">
+            <select id="paymentmethod" v-model="paymentmethod">
               <option selected="selected">Swish</option>
               <option>Card Payment</option>
               <option>Klarna</option>
@@ -131,14 +130,26 @@ const BurgerArray = menu;
 
 export default {
   name: "HomeView",
+  //mina komponenter
   components: {
     Burger,
   },
+
+  //min datastruktur
   data: function () {
     return {
       BurgerArray,
+      chosenburger: "",
+      fullname: "",
+      streetaddress: "",
+      housenumber: "",
+      postal: "",
+      gender: "",
+      paymentmethod: "",
     };
   },
+
+  //mina metoder/funktioner
   methods: {
     getOrderNumber: function () {
       return Math.floor(Math.random() * 100000);
@@ -205,6 +216,10 @@ header h1 {
   border: 2px dotted darkred;
   padding-left: 20px;
 }
+
+/*select gäller min select burger
+select {
+}*/
 
 p {
   /*detta påverkar rubrikerna i order info*/
