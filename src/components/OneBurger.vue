@@ -9,9 +9,25 @@
       <li v-else>Lactose-free</li>
       <li>{{ burger.protein }}</li>
     </ul>
-    <p>Amount ordered: {{ amountOrdered }}</p>
+    <div class="amountbuttons">
+      <button v-on:click="amountOrdered++">+</button>
+      <button v-on:click="amountOrdered--" :disabled="amountOrdered === 0">
+        <!--fick hjälp från ChatGPT med :disabled="amountOrdered === 0"-->
+        -
+      </button>
+
+      <p>Amount ordered: {{ amountOrdered }}</p>
+    </div>
   </div>
-</template>
+
+  <!-- Exempel från HomeView
+      <section id="thesubmitbutton">
+        <button type="submit" v-on:click="submitOrder">Submit order!</button>
+      </section>
+         <section id="increasebutton">
+        <button v-on:click="amountOrdered++">Add burger</button>
+      </section>
+--></template>
 
 <script>
 export default {
