@@ -13,8 +13,6 @@
       />
     </div>
 
-    <div id="map" v-on:click="addOrder">click here</div>
-
     <!-- nedan kommer från index-noscrpt.html-->
 
     <main>
@@ -108,6 +106,10 @@
     </main>
 
     <hr />
+    <!--detta är vita linjen över footern-->
+
+    <!--nedan är stora röda boxen-->
+    <div id="map" v-on:click="addOrder">click here</div>
 
     <footer>
       Nominated Best Burger of the Year 2025. <br />
@@ -151,7 +153,7 @@ export default {
       streetaddress: "",
       housenumber: "",
       postal: "",
-      city:"",
+      city: "",
       gender: "",
       paymentmethod: "",
     };
@@ -176,11 +178,18 @@ export default {
         orderItems: ["Beans", "Curry"],
       });
     },
-    submitOrder: function(){
-      console.log("Ordered burger:", this.chosenburger)
-      console.log("Full name:", this.fullname)
-      console.log("Delivery address:", this.streetaddress, this.housenumber,"," ,this.postal, this.city)
-    }
+    submitOrder: function () {
+      console.log("Ordered burger:", this.chosenburger);
+      console.log("Full name:", this.fullname);
+      console.log(
+        "Delivery address:",
+        this.streetaddress,
+        this.housenumber,
+        ",",
+        this.postal,
+        this.city
+      );
+    },
   },
 };
 </script>

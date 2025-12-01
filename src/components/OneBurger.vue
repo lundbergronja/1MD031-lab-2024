@@ -9,6 +9,7 @@
       <li v-else>Lactose-free</li>
       <li>{{ burger.protein }}</li>
     </ul>
+    <p>Amount ordered: {{ amountOrdered }}</p>
   </div>
 </template>
 
@@ -17,6 +18,11 @@ export default {
   name: "OneBurger",
   props: {
     burger: Object,
+  },
+  data: function () {
+    return {
+      amountOrdered: 0,
+    };
   },
 };
 </script>
