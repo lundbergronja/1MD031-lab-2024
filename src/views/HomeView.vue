@@ -110,7 +110,9 @@
     <!--detta är vita linjen över footern-->
 
     <!--nedan är stora röda boxen-->
-    <div id="map" v-on:click="addOrder">click here</div>
+    <div class="delivery">
+      <div id="map" v-on:click="addOrder">click here</div>
+    </div>
 
     <!--nedan är footern-->
     <footer>
@@ -203,10 +205,18 @@ export default {
 </script>
 
 <style>
+.delivery {
+  width: 100%;
+  height: 400px;
+  overflow: scroll;
+}
+
 #map {
-  width: 300px;
-  height: 300px;
-  background-color: red;
+  width: 1920px;
+  height: 1078px;
+  background: url("/img/polacks.jpg");
+  background-size: initial;
+  background-repeat: no-repeat;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Cormorant:wght@700&display=swap");
