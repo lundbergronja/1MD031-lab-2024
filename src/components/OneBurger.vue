@@ -23,10 +23,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
-
 /*Justerar burgarboxarna*/
-.box{
+.box {
   width: px;
   background-color: crimson;
   color: black;
@@ -35,5 +33,4 @@ export default {
   font-size: 100%;
   font-weight: bold;
 }
-
 </style>
