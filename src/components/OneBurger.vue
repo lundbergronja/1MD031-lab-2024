@@ -10,24 +10,15 @@
       <li>{{ burger.protein }}</li>
     </ul>
     <div class="amountbuttons">
-      <button v-on:click="amountOrdered++">+</button>
-      <button v-on:click="amountOrdered--" :disabled="amountOrdered === 0">
-        <!--fick hjälp från ChatGPT med :disabled="amountOrdered === 0"-->
+      <button v-on:click="addBurger">+</button>
+      <button v-on:click="deleteBurger" :disabled="amountOrdered === 0">
         -
       </button>
-
+      <!--fick hjälp från ChatGPT med :disabled="amountOrdered === 0"-->
       <p>Amount ordered: {{ amountOrdered }}</p>
     </div>
   </div>
-
-  <!-- Exempel från HomeView
-      <section id="thesubmitbutton">
-        <button type="submit" v-on:click="submitOrder">Submit order!</button>
-      </section>
-         <section id="increasebutton">
-        <button v-on:click="amountOrdered++">Add burger</button>
-      </section>
---></template>
+</template>
 
 <script>
 export default {
@@ -39,6 +30,25 @@ export default {
     return {
       amountOrdered: 0,
     };
+  },
+  methods: {
+    addBurger: function () {
+      this.amountOrdered += 1;
+      this.$emit("orderedBurger", {
+        name: this.burger.name,
+        amount: this.amountOrdered,
+      });
+    },
+
+    deleteBurger: function () {
+      if (this.amountOrdered > 0) {
+        this.amountOrdered -= 1;
+        this.$emit("orderedBurger", {
+          name: this.burger.name,
+          amount: this.amountOrdered,
+        });
+      }
+    },
   },
 };
 </script>

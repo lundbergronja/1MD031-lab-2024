@@ -10,6 +10,7 @@
         v-for="burger in BurgerArray"
         v-bind:burger="burger"
         v-bind:key="burger.name"
+        v-on:orderedBurger="addToOrder($event)"
       />
     </div>
 
@@ -156,6 +157,7 @@ export default {
       city: "",
       gender: "",
       paymentmethod: "",
+      orderedBurgers: {},
     };
   },
 
@@ -189,6 +191,10 @@ export default {
         this.postal,
         this.city
       );
+      console.log(this.orderedBurgers);
+    },
+    addToOrder: function (event) {
+      this.orderedBurgers[event.name] = event.amount;
     },
   },
 };
