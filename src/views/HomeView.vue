@@ -70,6 +70,13 @@
               required="required"
               placeholder="Postal code"
             />
+            <input
+              type="text"
+              id="city"
+              v-model="city"
+              required="required"
+              placeholder="City"
+            />
           </p>
           <p>
             <label for="gender">Gender:</label>
@@ -96,7 +103,7 @@
       </section>
 
       <section id="thesubmitbutton">
-        <button type="submit" name="Submit">Submit order!</button>
+        <button type="submit" v-on:click="submitOrder">Submit order!</button>
       </section>
     </main>
 
@@ -144,6 +151,7 @@ export default {
       streetaddress: "",
       housenumber: "",
       postal: "",
+      city:"",
       gender: "",
       paymentmethod: "",
     };
@@ -168,6 +176,11 @@ export default {
         orderItems: ["Beans", "Curry"],
       });
     },
+    submitOrder: function(){
+      console.log("Ordered burger:", this.chosenburger)
+      console.log("Full name:", this.fullname)
+      console.log("Delivery address:", this.streetaddress, this.housenumber,"," ,this.postal, this.city)
+    }
   },
 };
 </script>
