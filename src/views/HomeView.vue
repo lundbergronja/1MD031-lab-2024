@@ -47,37 +47,6 @@
             />
           </p>
           <p>
-            <label for="fulladress">Full address</label><br />
-            <input
-              type="text"
-              id="streetaddress"
-              v-model="streetaddress"
-              required="required"
-              placeholder="Street"
-            />
-            <input
-              type="number"
-              id="housenumber"
-              v-model="housenumber"
-              required="required"
-              placeholder="Number"
-            /><br />
-            <input
-              type="text"
-              id="postal"
-              v-model="postal"
-              required="required"
-              placeholder="Postal code"
-            />
-            <input
-              type="text"
-              id="city"
-              v-model="city"
-              required="required"
-              placeholder="City"
-            />
-          </p>
-          <p>
             <label for="gender">Gender:</label>
 
             <input type="radio" id="male" v-model="gender" value="male" />
@@ -155,13 +124,10 @@ export default {
       BurgerArray,
       chosenburger: "",
       fullname: "",
-      streetaddress: "",
-      housenumber: "",
-      postal: "",
-      city: "",
       gender: "",
       paymentmethod: "",
       orderedBurgers: {},
+      location: { x: 0, y: 0 },
     };
   },
 
@@ -175,12 +141,13 @@ export default {
         x: event.currentTarget.getBoundingClientRect().left,
         y: event.currentTarget.getBoundingClientRect().top,
       };
+      this.location = {
+        x: event.clientX - offset.x,
+        y: event.clientY - offset.y,
+      };
       socket.emit("addOrder", {
         orderId: this.getOrderNumber(),
-        details: {
-          x: event.clientX - 10 - offset.x,
-          y: event.clientY - 10 - offset.y,
-        },
+        details: { x: this.location.x, y: this.location.y },
         orderItems: ["Beans", "Curry"],
       });
     },
