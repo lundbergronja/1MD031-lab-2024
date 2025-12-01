@@ -112,6 +112,7 @@
     <!--nedan är stora röda boxen-->
     <div id="map" v-on:click="addOrder">click here</div>
 
+    <!--nedan är footern-->
     <footer>
       Nominated Best Burger of the Year 2025. <br />
       For complaints please email complaints@tastyburgers.com
@@ -135,6 +136,7 @@ function MenuItem(productName, imgUrl, kCal, hasLactose, hasGluten, protein) {
   this.gluten = hasGluten;
   this.protein = protein;
 }
+
 //min array med burgare
 const BurgerArray = menu;
 
@@ -252,12 +254,6 @@ select {
 p {
   /*detta påverkar rubrikerna i order info*/
   color: azure;
-}
-
-#burgersection {
-  color: white;
-  background-color: black;
-  border: 2px dotted darkred;
 }
 
 button:hover {
