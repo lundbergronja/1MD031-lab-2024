@@ -55,11 +55,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-/*Justerar burgarboxarna*/
+/*Justerar dom små burgarboxarna*/
 .box {
   width: px;
   background-color: crimson;
-  color: black;
+  color: #eec2c2;
   border-radius: 30px;
   padding: 20px;
   font-size: 100%;

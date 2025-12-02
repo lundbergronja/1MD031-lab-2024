@@ -5,6 +5,7 @@
 
   <div>
     <h2>Our current selection of burgers</h2>
+    <h4>Use the +/- buttons to build your order</h4>
     <div class="wrapper">
       <Burger
         v-for="burger in BurgerArray"
@@ -19,7 +20,7 @@
     <main>
       <section id="orderinfo">
         <h2>Order information</h2>
-        <legend><h4>Personal information</h4></legend>
+        <legend><h4>Please provide your personal information here</h4></legend>
 
         <form>
           <p>
@@ -177,7 +178,6 @@ export default {
   height: 400px;
   overflow: scroll;
 }
-
 .delivery p {
   color: black;
   font-weight: bold;
@@ -236,22 +236,23 @@ header h1 {
 }
 
 #orderinfo {
-  color: black;
+  color: #eec2c2;
+  font-size: larger;
   border: 2px dotted darkred;
   padding-left: 20px;
+}
+#orderinfo h4 {
+  color: black;
+  font-size: smaller;
 }
 
 /*select gäller min select burger
 select {
 }*/
 
-p {
-  /*detta påverkar rubrikerna i order info*/
-  color: azure;
-}
-
 button:hover {
-  background-color: floralwhite;
+  background-color: #eec2c2;
+  color: crimson;
   cursor: pointer;
 }
 
@@ -269,6 +270,5 @@ section {
   grid-gap: 5px;
   grid-template-columns: 33% 33% 33%;
   color: #eec2c2;
-  background-color: black;
 }
 </style>
