@@ -15,7 +15,7 @@
         -
       </button>
       <!--fick hjälp från ChatGPT med :disabled="amountOrdered === 0"-->
-      <p>Amount ordered: {{ amountOrdered }}</p>
+      <p>Amount wanted: {{ amountOrdered }}</p>
     </div>
   </div>
 </template>

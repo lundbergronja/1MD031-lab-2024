@@ -17,20 +17,6 @@
     <!-- nedan kommer från index-noscrpt.html-->
 
     <main>
-      <section id="SelectionSection">
-        <h3>Select burger</h3>
-        <p>
-          <label for="chosenburger">Choose burger</label><br />
-          <select id="chosenburger" v-model="chosenburger">
-            <option value="" disabled hidden>Select burger</option>
-            <!-- Fick hjälp av ChatGPT att lära mig hur jag skulle skriva denna raden för att få Select Burger som placeholder som försvinner när man väl väljer burgare-->
-            <option>Tastys Original Burger</option>
-            <option>Tastys Very Cheesy Cheeseburger</option>
-            <option>Tastys Healthy Burger</option>
-          </select>
-        </p>
-      </section>
-
       <section id="orderinfo">
         <h2>Order information</h2>
         <legend><h4>Personal information</h4></legend>
@@ -71,7 +57,15 @@
       </section>
 
       <div class="delivery">
-        <div id="map" v-on:click="addOrder">click here</div>
+        <p>Please pin your drop-off location on the map:</p>
+        <div id="map" v-on:click="setLocation">
+          <div
+            class="target"
+            v-bind:style="{ left: location.x + 'px', top: location.y + 'px' }"
+          >
+            T
+          </div>
+        </div>
       </div>
 
       <section id="thesubmitbutton">
@@ -97,7 +91,7 @@ import io from "socket.io-client";
 
 const socket = io("localhost:3000");
 
-//min constructor function "MenuItem"
+//min constructor function "MenuItem", som inte används längre
 function MenuItem(productName, imgUrl, kCal, hasLactose, hasGluten, protein) {
   this.name = productName;
   this.url = imgUrl;
@@ -135,22 +129,17 @@ export default {
     getOrderNumber: function () {
       return Math.floor(Math.random() * 100000);
     },
-    addOrder: function (event) {
-      var offset = {
-        x: event.currentTarget.getBoundingClientRect().left,
-        y: event.currentTarget.getBoundingClientRect().top,
-      };
-      this.location = {
-        x: event.clientX - offset.x,
-        y: event.clientY - offset.y,
-      };
+    submitOrder: function () {
       socket.emit("addOrder", {
         orderId: this.getOrderNumber(),
         details: { x: this.location.x, y: this.location.y },
-        orderItems: ["Beans", "Curry"],
+        orderItems: this.orderedBurgers,
+        customerInfo: {
+          customerName: this.fullname,
+          gender: this.gender,
+          paymentMethod: this.paymentmethod,
+        },
       });
-    },
-    submitOrder: function () {
       console.log("Ordered burger:", this.chosenburger);
       console.log("Full name:", this.fullname);
       console.log(
@@ -161,10 +150,22 @@ export default {
         this.postal,
         this.city
       );
+      //ev ta med det under detta
+      console.log("PIN 4 delivery:", this.location);
       console.log(this.orderedBurgers);
     },
     addToOrder: function (event) {
       this.orderedBurgers[event.name] = event.amount;
+    },
+    setLocation: function (event) {
+      var offset = {
+        x: event.currentTarget.getBoundingClientRect().left,
+        y: event.currentTarget.getBoundingClientRect().top,
+      };
+      this.location = {
+        x: event.clientX - offset.x,
+        y: event.clientY - offset.y,
+      };
     },
   },
 };
@@ -177,12 +178,29 @@ export default {
   overflow: scroll;
 }
 
+.delivery p {
+  color: black;
+  font-weight: bold;
+}
+
 #map {
+  position: relative;
   width: 1920px;
   height: 1078px;
   background: url("/img/polacks.jpg");
   background-size: initial;
   background-repeat: no-repeat;
+}
+.target {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: black;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 20px;
+  font-weight: bold;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Cormorant:wght@700&display=swap");

@@ -2,13 +2,24 @@
   <div id="orders">
     <div id="orderList">
       <div v-for="(order, key) in orders" v-bind:key="'order' + key">
-        #{{ key }}: {{ order.orderItems.join(", ") }}
+        <strong> #{{ key }}:</strong>
+        <div class="rubrik">Order:</div>
+        <div v-for="(amount, name) in order.orderItems" :key="name">
+          {{ name }}: {{ amount }}
+        </div>
+        <div class="rubrik">Customer info:</div>
+        <div class="customer">
+          <div>Name: {{ order.customerInfo.customerName }}</div>
+          <div>Gender: {{ order.customerInfo.gender }}</div>
+          <div>Payment method: {{ order.customerInfo.paymentMethod }}</div>
+        </div>
+        <hr />
       </div>
       <button v-on:click="clearQueue">Clear Queue</button>
     </div>
     <div id="dots">
       <div
-        class="Target"
+        class="target"
         v-bind:style="{ left: location.x + 'px', top: location.y + 'px' }"
       >
         T
@@ -35,7 +46,7 @@ export default {
   name: "DispatcherView",
   data: function () {
     return {
-      orders: null,
+      orders: {},
       location: { x: 0, y: 0 },
     };
   },
@@ -62,6 +73,11 @@ export default {
   background: rgba(255, 255, 255, 0.5);
   padding: 1em;
 }
+
+.rubrik {
+  font-weight: bold;
+}
+
 #dots {
   position: relative;
   margin: 0;
