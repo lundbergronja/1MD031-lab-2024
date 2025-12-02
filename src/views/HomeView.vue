@@ -70,19 +70,18 @@
         </form>
       </section>
 
+      <div class="delivery">
+        <div id="map" v-on:click="addOrder">click here</div>
+      </div>
+
       <section id="thesubmitbutton">
         <button type="submit" v-on:click="submitOrder">Submit order!</button>
       </section>
-    </main>
 
+      <!--nedan är stora röda boxen-->
+    </main>
     <hr />
     <!--detta är vita linjen över footern-->
-
-    <!--nedan är stora röda boxen-->
-    <div class="delivery">
-      <div id="map" v-on:click="addOrder">click here</div>
-    </div>
-
     <!--nedan är footern-->
     <footer>
       Nominated Best Burger of the Year 2025. <br />
